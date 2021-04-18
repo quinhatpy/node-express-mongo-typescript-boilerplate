@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+  mongo:
+    image: mongo:4.4.5-bionic
+    container_name: mongo-dev
+    restart: unless-stopped
+    networks:
+      - dev-network
+    volumes:
+      - ./.docker/data/mongo:/data/db
+    ports:
+      - '${MONGODB_PORT}:${MONGODB_PORT}'
+
+networks:
+  dev-network:
+    driver: bridge

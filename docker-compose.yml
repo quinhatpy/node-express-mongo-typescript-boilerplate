@@ -1,0 +1,25 @@
+version: '3.7'
+
+services:
+  api-server:
+    env_file:
+      - .env
+    build:
+      context: .
+    container_name: api-server
+    image: api-server
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+      - MONGODB_URL=${MONGODB_URL}
+      - PORT=${PORT}
+    ports:
+      - '${PORT}:${PORT}'
+    volumes:
+      - ./logs:/logs
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

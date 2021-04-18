@@ -1,0 +1,65 @@
+{
+  "name": "express-mongo-typescript-boilerplate",
+  "version": "1.0.0",
+  "description": "NodeJS + Express + MongoDB + Typescript boilerplate for RESTful API",
+  "main": "src/index.ts",
+  "scripts": {
+    "postinstall": "chmod +x ./scripts/dev.sh",
+    "build": "tsc && tsc-alias",
+    "start": "node build/index.js",
+    "start:local": "cross-env NODE_ENV=production && yarn build && yarn start",
+    "dev": "./scripts/dev.sh",
+    "dev-server": "cross-env NODE_ENV=development nodemon",
+    "ts-node-server": "ts-node -r tsconfig-paths/register --transpile-only src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --ext js,ts src/",
+    "lint:fix": "eslint --fix --ext js,ts src/",
+    "prettier": "prettier --check \"src/**/(*.ts|*.js)\"",
+    "prettier:fix": "prettier --write \"src/**/(*.ts|*.js)\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quinhatpy/node-express-mongo-typescript-boilerplate.git"
+  },
+  "keywords": [
+    "NodeJS",
+    "Express",
+    "MongoDB",
+    "Typescript",
+    "RESTful",
+    "API"
+  ],
+  "author": "Le Qui Nhat",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/quinhatpy/node-express-mongo-typescript-boilerplate/issues"
+  },
+  "homepage": "https://github.com/quinhatpy/node-express-mongo-typescript-boilerplate#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "@typescript-eslint/parser": "^4.22.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.24.0",
+    "eslint-config-prettier": "^8.2.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-import-resolver-typescript": "^2.4.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-security": "^1.4.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "husky": "^6.0.0",
+    "lint-staged": "^10.5.4",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.2.1",
+    "ts-node": "^9.1.1",
+    "tsc-alias": "^1.2.9",
+    "tsconfig-paths": "^3.9.0",
+    "typescript": "^4.2.4"
+  },
+  "dependencies": {
+    "@types/node": "^14.14.41"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "rootDir": "src",
+    "outDir": "./build",
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "lib": ["esnext"],
+    "esModuleInterop": true,
+    "noImplicitAny": true,
+    "baseUrl": "./",
+    "paths": {
+      "@app/*": ["src/app/*"],
+      "@app/controllers/*": ["src/app/controllers/*"],
+      "@app/middleware/*": ["src/app/middleware/*"],
+      "@app/models/*": ["src/app/models/*"],
+      "@app/services/*": ["src/app/services/*"],
+      "@configs/*": ["src/configs/*"],
+      "@constants/*": ["src/constants/*"],
+      "@databases/*": ["src/databases/*"],
+      "@interfaces/*": ["src/interfaces/*"],
+      "@utils/*": ["src/utils/*"],
+      "@routes/*": ["src/routes/*"],
+      "@/*": ["src/*"]
+    }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["./build", "node_modules"]
+}
