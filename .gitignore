@@ -5,6 +5,7 @@ node_modules
 yarn-error.log
 
 .docker
+logs
 
 build
 .env

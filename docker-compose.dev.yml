@@ -1,7 +1,9 @@
 version: '3.7'
 
 services:
-  mongo:
+  mongodb:
+    env_file:
+      - .env
     image: mongo:4.4.5-bionic
     container_name: mongo-dev
     restart: unless-stopped
@@ -11,6 +13,9 @@ services:
       - ./.docker/data/mongo:/data/db
     ports:
       - '${MONGODB_PORT}:${MONGODB_PORT}'
+
+volumes:
+  .docker:
 
 networks:
   dev-network:

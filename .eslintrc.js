@@ -41,21 +41,23 @@ module.exports = {
       {
         groups: [
           // External packages related packages come first.
-          ['^\\w', '^@?\\w'],
+          ['^express$', '^\\w', '^@?\\w'],
           // Internal packages.
           [
             '^@/.*|$',
-            '^@app/.*|$',
-            '^@app/controllers/.*|$',
-            '^@app/middleware/.*|$',
-            '^@app/models/.*|$',
-            '^@app/services/.*|$',
-            '^@configs/.*|$',
-            '^@constants/.*|$',
-            '^@databases/.*|$',
             '^@interfaces/.*|$',
+            '^@constants/.*|$',
+            '^@configs/?.*|$',
             '^@utils/.*|$',
+            '^@databases/.*|$',
             '^@routes/.*|$',
+            '^@app/?.*|$',
+            '^@middleware/.*|$',
+            '^@exceptions/.*|$',
+            '^@request/.*|$',
+            '^@controllers/.*|$',
+            '^@models/.*|$',
+            '^@services/.*|$',
           ],
           [
             // Parent imports. Put `..` last.
@@ -94,6 +96,18 @@ module.exports = {
     'no-unused-vars': 0,
     'no-throw-literal': 0,
     'import/no-unresolved': 'error',
+    '@typescript-eslint/no-explicit-any': [
+      'error',
+      {
+        ignoreRestArgs: true,
+      },
+    ],
+    '@typescript-eslint/explicit-module-boundary-types': [
+      'error',
+      {
+        allowArgumentsExplicitlyTypedAsAny: true,
+      },
+    ],
   },
   settings: {
     'import/parsers': {

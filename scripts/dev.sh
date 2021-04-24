@@ -22,4 +22,4 @@ fi
 
 COMPOSE_HTTP_TIMEOUT=120 docker-compose -f docker-compose.dev.yml up -d --force-recreate
 
-yarn dev-server
+yarn dev:server

@@ -10,21 +10,24 @@
     "esModuleInterop": true,
     "noImplicitAny": true,
     "baseUrl": "./",
+    "pretty": true,
     "paths": {
-      "@app/*": ["src/app/*"],
-      "@app/controllers/*": ["src/app/controllers/*"],
-      "@app/middleware/*": ["src/app/middleware/*"],
-      "@app/models/*": ["src/app/models/*"],
-      "@app/services/*": ["src/app/services/*"],
-      "@configs/*": ["src/configs/*"],
+      "@app": ["src/app"],
+      "@controllers/*": ["src/app/controllers/*"],
+      "@request/*": ["src/app/request/*"],
+      "@middleware/*": ["src/app/middleware/*"],
+      "@models/*": ["src/app/models/*"],
+      "@services/*": ["src/app/services/*"],
+      "@exceptions/*": ["src/app/exceptions/*"],
+      "@routes/*": ["src/app/routes/*"],
+      "@configs": ["src/configs"],
       "@constants/*": ["src/constants/*"],
       "@databases/*": ["src/databases/*"],
       "@interfaces/*": ["src/interfaces/*"],
       "@utils/*": ["src/utils/*"],
-      "@routes/*": ["src/routes/*"],
       "@/*": ["src/*"]
     }
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*.ts", "src/**/*.json", ".env"],
   "exclude": ["./build", "node_modules"]
 }
